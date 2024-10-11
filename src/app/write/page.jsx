@@ -28,7 +28,7 @@ const WritePage = () => {
 
   if (
     status == "authenticated" &&
-    data.user.email === process.env.NEXT_PUBLIC_EMAIL
+    data.user.email !== process.env.NEXT_PUBLIC_EMAIL
   ) {
     router.push("/");
   }
