@@ -24,11 +24,11 @@ const nextConfig = {
   },
   redirects: async () => {
     return [
-      {
-        source: "/write",
-        destination: "/",
-        permanent: false,
-      },
+      // {
+      //   source: "/write",
+      //   destination: "/",
+      //   permanent: false,
+      // },
     ];
   },
 };

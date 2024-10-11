@@ -4,7 +4,7 @@ import Image from "next/image";
 import Socials from "../socials/Socials";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/featured`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/featured`, {
     // cache: "no-store",
   });
 

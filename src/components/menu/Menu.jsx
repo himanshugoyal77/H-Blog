@@ -4,7 +4,7 @@ import MenuPosts from "../menuPosts/MenuPosts";
 import MenuCategories from "../menuCategories/MenuCategories";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/popular`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/popular`, {
     cache: "no-store",
   });
 
