@@ -21,8 +21,8 @@ const Featured = async () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey, Himanshu here!</b> Welcome to Code Chronicles: A Developer's
-        Diary
+        <b>Hey, Himanshu here!</b> Welcome to Code Chronicles: A
+        Developer&apos;s Diary
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
