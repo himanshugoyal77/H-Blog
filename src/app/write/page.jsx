@@ -26,12 +26,14 @@ const WritePage = () => {
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
 
-  if (
-    status == "authenticated" &&
-    data.user.email !== process.env.NEXT_PUBLIC_EMAIL
-  ) {
-    router.push("/");
-  }
+  useEffect(() => {
+    if (
+      status == "authenticated" &&
+      data.user.email !== process.env.NEXT_PUBLIC_EMAIL
+    ) {
+      router.push("/");
+    }
+  }, [status]);
 
   useEffect(() => {
     const storage = getStorage(app);
