@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./writePage.module.css";
+import styles from "../app/write/writePage.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
@@ -14,8 +14,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import dynamic from "next/dynamic";
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import ReactQuill from "react-quill";
 
 const WritePage = () => {
   const { status, data } = useSession();
@@ -71,17 +70,6 @@ const WritePage = () => {
 
     file && upload();
   }, [file]);
-
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    // Only set to true after the component has mounted (client-side)
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null; // Prevent rendering during SSR
-  }
 
   if (router.isFallback) {
     return <div>Loading...</div>;

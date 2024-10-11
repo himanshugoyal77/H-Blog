@@ -19,6 +19,18 @@ const nextConfig = {
     }
     return config;
   },
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
+  redirects: async () => {
+    return [
+      {
+        source: "/write",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
