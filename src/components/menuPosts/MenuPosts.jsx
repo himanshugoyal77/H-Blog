@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./menuPosts.module.css";
+import moment from "moment";
 
 const MenuPosts = ({ withImage, data }) => {
   return (
@@ -21,7 +22,10 @@ const MenuPosts = ({ withImage, data }) => {
             <span className={styles.username}>
               {data?.user?.name || "unknown"}
             </span>
-            <span className={styles.date}> - {data.createdAt}</span>
+            <span className={styles.date}>
+              {" "}
+              - {moment(data?.createdAt).fromNow()}
+            </span>
           </div>
         </div>
       </Link>

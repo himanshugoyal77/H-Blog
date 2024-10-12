@@ -2,6 +2,7 @@ import Menu from "@/components/menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comment";
+import moment from "moment";
 
 const getData = async (slug) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${slug}`, {
@@ -38,7 +39,9 @@ const SinglePage = async ({ params }) => {
             )}
             <div className={styles.userTextContainer}>
               <span className={styles.username}>{data?.user.name}</span>
-              <span className={styles.date}>01.01.2024</span>
+              <span className={styles.date}>
+                {moment(data?.createdAt).fromNow()}
+              </span>
             </div>
           </div>
         </div>
