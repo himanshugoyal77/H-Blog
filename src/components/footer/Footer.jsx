@@ -26,14 +26,7 @@ const Footer = () => {
           />
           H-Blog
         </div>
-        <p
-          style={{
-            margin: "0 40px",
-          }}
-        >
-          {" "}
-          By Himanshu Goyal
-        </p>
+        <p className={styles.p}> By Himanshu Goyal</p>
       </div>
 
       <div className={styles.links}>

@@ -87,6 +87,22 @@
   width: max-content;
 }
 
+.link {
+  margin-top: 20px;
+  background-color: #7fb881;
+  max-width: 120px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 10px;
+  color: white;
+  border-radius: 8px;
+}
+
+.link:hover {
+  background-color: #6a9e6f;
+  transform-origin: all ease-in-out 0.5s;
+}
+
 @media screen and (max-width: 1280px) {
   .title {
     font-size: 72px;

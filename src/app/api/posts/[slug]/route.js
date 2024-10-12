@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 // GET SINGLE POST
 export const GET = async (req, { params }) => {
   const { slug } = params;
-
+  console.log("slug" + slug);
   try {
     if (slug === "popular") {
       const posts = await prisma.post.findMany({

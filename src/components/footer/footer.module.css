@@ -44,10 +44,16 @@
   gap: 100px;
 }
 
+.p {
+  margin: 0 40px;
+}
+
 .social {
   width: 100%;
   display: flex;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .list {
@@ -81,5 +87,12 @@
 @media screen and (max-width: 640px) {
   .links {
     font-size: 14px;
+    justify-content: center;
+  }
+  .listTitle {
+    display: none;
+  }
+  .p {
+    display: none;
   }
 }

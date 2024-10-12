@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
-import Socials from "../socials/Socials";
+import Link from "next/link";
 
 const getData = async (slug) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/featured`, {
@@ -21,8 +21,7 @@ const Featured = async () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey, Himanshu here!</b> Welcome to Code Chronicles: A
-        Developer&apos;s Diary
+        <b>Hey, Himanshu here!</b> Welcome to my Development diary.
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
@@ -39,6 +38,9 @@ const Featured = async () => {
           </div>
           <h1 className={styles.postTitle}>{data[0].title}</h1>
           <p className={styles.postDesc}>{data[0].desc.substring(0, 250)}...</p>
+          <Link href={`/posts/${data[0].slug}`} className={styles.link}>
+            Read More
+          </Link>
         </div>
       </div>
     </div>

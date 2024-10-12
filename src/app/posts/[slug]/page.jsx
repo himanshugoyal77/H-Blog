@@ -4,7 +4,7 @@ import Image from "next/image";
 import Comments from "@/components/comments/Comment";
 
 const getData = async (slug) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/posts/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/${slug}`, {
     cache: "no-store",
   });
 
@@ -12,7 +12,7 @@ const getData = async (slug) => {
     throw new Error("Failed");
   }
 
-  return res.json();
+  return await res.json();
 };
 
 const SinglePage = async ({ params }) => {
