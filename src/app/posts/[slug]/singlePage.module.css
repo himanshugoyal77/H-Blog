@@ -53,7 +53,7 @@
 }
 
 .content {
-  display: flex;
+  /* display: flex; */
   gap: 50px;
 }
 
@@ -87,8 +87,17 @@
   .title {
     font-size: 36px;
   }
+  
+  .post {
+    overflow-wrap: break-word;
+  }
+
+  .content {
+    flex: none;
+  }
 
   .description p {
     font-size: 18px;
+    text-wrap: wrap;
   }
 }

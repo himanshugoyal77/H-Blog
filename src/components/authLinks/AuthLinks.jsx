@@ -9,6 +9,8 @@ const AuthLinks = () => {
 
   const { status, data } = useSession();
 
+  console.log(status);
+
   return (
     <>
       {status === "unauthenticated" ? (
@@ -36,13 +38,10 @@ const AuthLinks = () => {
       {open && (
         <div className={styles.responsiveMenu}>
           <Link href="/">Homepage</Link>
-          <Link
-            href="https://himanshu-goyal-delta.vercel.app/#contact"
-            className={styles.link}
-          >
+          <Link href="https://himanshu-goyal-delta.vercel.app/#contact">
             Contact
           </Link>
-          {status === "notauthenticated" ? (
+          {status === "unauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
